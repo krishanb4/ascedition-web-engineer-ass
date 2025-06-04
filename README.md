@@ -124,31 +124,54 @@ yarn test:coverage
 ## 🏗 Project Structure
 
 ```
-├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── api/               # API routes
-│   │   │   ├── getSecureWord/ # Secure word generation
-│   │   │   ├── login/         # Login authentication
-│   │   │   ├── verifyMfa/     # MFA verification
-│   │   │   └── transaction-history/ # Mock transaction data
-│   │   ├── login/             # Login flow pages
-│   │   ├── dashboard/         # Post-login dashboard
-│   │   └── layout.tsx         # Root layout with navbar
-│   ├── components/            # Reusable components
-│   │   ├── Navbar.tsx         # Navigation component
-│   │   ├── LoginForm.tsx      # Multi-step login
-│   │   ├── TransactionTable.tsx # Data table
-│   │   └── ui/                # UI primitives
-│   ├── lib/                   # Utility functions
-│   │   ├── auth.ts            # Authentication helpers
-│   │   ├── crypto.ts          # Cryptographic functions
-│   │   └── validation.ts      # Input validation
-│   └── types/                 # TypeScript definitions
+ascedition-web-engineer-ass/
 ├── __tests__/                 # Test files
+│   ├── api/
+│   │   ├── login.test.js
+│   │   ├── secure-word.test.js
+│   │   └── transaction-history.test.js
+│   ├── components/
+│   │   ├── login.test.js
+│   │   └── Navbar.test.tsx
+│   └── utils/
+│       ├── auth.test.tsx
+│       └── crypto.test.js
+├── app/                       # Next.js App Router
+│   ├── api/                   # API routes
+│   │   ├── generateMfa/
+│   │   │   └── route.ts
+│   │   ├── getSecureWord/
+│   │   │   └── route.ts
+│   │   ├── login/
+│   │   │   └── route.ts
+│   │   ├── transaction-history/
+│   │   │   └── route.ts
+│   │   └── verifyMfa/
+│   │       └── route.ts
+│   ├── components/
+│   │   ├── ConditionalNavbar.tsx
+│   │   ├── Navbar.tsx
+│   │   └── ProtectedRoute.tsx
+│   ├── dashboard/
+│   │   └── page.tsx
+│   ├── login/
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── lib/                       # Utility functions
+│   ├── auth.ts
+│   ├── globalStore.ts
+│   └── store.ts
 ├── public/                    # Static assets
-├── tailwind.config.js         # Tailwind configuration
-├── next.config.js             # Next.js configuration
-└── package.json               # Dependencies and scripts
+├── .gitignore
+├── .swc/
+├── next.config.js
+├── package.json
+├── README.md
+├── tailwind.config.js
+└── tsconfig.json
 ```
 
 ## 🔐 API Endpoints
